@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT Assistant</title>
+    <script src="/static/chats.js"></script>
+    <script src="/static/files.js"></script>
+    <script src="/static/assistant_api.js"></script>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>📁 Чаты</h2>
+            <button onclick="createChat()">➕ Создать новый чат</button>
+            <button id="delete_chat_button" onclick="deleteChat()" disabled>🗑 Удалить чат</button>
+            <ul id="chat_list"></ul>
+
+            <h2>📂 Файлы проекта</h2>
+            <div id="file_structure"></div>
+        </div>
+
+        <div class="chat-area">
+            <h1>💬 GPT Chat</h1>
+            <div id="chat_response" class="chat-box"></div>
+
+            <textarea id="user_message" rows="4" placeholder="Введите сообщение..."></textarea>
+            <button onclick="sendChat()">Отправить</button>
+
+            <h2>📌 Предустановленные запросы</h2>
+            <select id="preset_prompt">
+                <option value="describe">📖 Расскажи про этот код</option>
+                <option value="find_bugs">🐞 Какие баги в коде?</option>
+                <option value="optimize">⚡ Как можно улучшить код?</option>
+                <option value="architecture">🏗️ Как организовать архитектуру?</option>
+                <option value="add_feature">🛠️ Как добавить новую фичу?</option>
+            </select>
+            <button onclick="sendPresetPrompt()">Отправить</button>
+            
+            <h2>📋 Отправляем в GPT</h2>
+            <div id="gpt_data" class="gpt-box"></div>
+            
+            <div id="loading" style="display:none; color: red;">Загрузка...</div>
+        </div>
+    </div>
+</body>
+</html>
