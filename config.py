@@ -7,6 +7,7 @@ load_dotenv()
 
 # API-ключ OpenAI
 OPENAI_API_KEY = "YOU_OPENAI_API_KEY"
+#OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # Расширения файлов, которые отслеживаются
 CODE_EXTENSIONS = {".py", ".js", ".ts", ".html", ".css", ".json", ".md", ".php"}
